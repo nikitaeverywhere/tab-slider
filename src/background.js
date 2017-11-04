@@ -1,9 +1,12 @@
 const defaultDelay = 1;
 
-chrome.tabs.onActivated.addListener(({ tabId }) => {
+let timeout;
 
-	setTimeout(
-		() => triggerTabSlide(tabId),
+chrome.tabs.onActivated.addListener(() => {
+
+	clearTimeout(timeout);
+	timeout = setTimeout(
+		triggerTabSlide,
 		(localStorage.hasOwnProperty("delay") ? localStorage["delay"] : defaultDelay) * 1000
 	);
 
@@ -20,7 +23,7 @@ chrome.tabs.onCreated.addListener(({ id, selected }) => {
 
 });
 
-function triggerTabSlide (tabId) {
+function triggerTabSlide () {
 
 	chrome.tabs.query({
 		active: true,
@@ -30,7 +33,7 @@ function triggerTabSlide (tabId) {
 		if (!tab)
 			return;
 
-		if (tab.id === tabId && tab.index !== 0) {
+		if (tab.index !== 0) {
 			chrome.tabs.move(tab.id, {
 				index: 0
 			});
