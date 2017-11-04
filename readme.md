@@ -6,7 +6,7 @@ creating totally different browsing experience. Try it!
 Demo
 ----
 
-![Demo](demo.gif "Demo")
+![Demo](etc/demo.gif "Demo")
 
 License
 -------
