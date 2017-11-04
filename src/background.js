@@ -9,6 +9,17 @@ chrome.tabs.onActivated.addListener(({ tabId }) => {
 
 });
 
+chrome.tabs.onCreated.addListener(({ id, selected }) => {
+
+	if (!selected)
+		return;
+
+	chrome.tabs.move(id, {
+		index: 0
+	});
+
+});
+
 function triggerTabSlide (tabId) {
 
 	chrome.tabs.query({
@@ -19,7 +30,7 @@ function triggerTabSlide (tabId) {
 		if (!tab)
 			return;
 
-		if (tab.id === tabId) {
+		if (tab.id === tabId && tab.index !== 0) {
 			chrome.tabs.move(tab.id, {
 				index: 0
 			});

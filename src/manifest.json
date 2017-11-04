@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Tab Slider",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Slides most recent tabs to the left, creating totally different browsing experience",
   "author": "ZitRo",
   "icons": {
