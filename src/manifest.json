@@ -5,6 +5,8 @@
   "description": "Slides most recent tabs to the left, creating totally different browsing experience",
   "author": "ZitRo",
   "icons": {
+    "16": "img/logo-16.png",
+    "48": "img/logo-48.png",
     "128": "img/logo-128.png"
   },
   "background": {
