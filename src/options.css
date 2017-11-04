@@ -10,9 +10,14 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 .logo {
 	height: 32px;
 	vertical-align: bottom;
+}
+
+#delay {
+	width: 80px;
 }
