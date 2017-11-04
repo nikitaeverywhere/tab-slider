@@ -2,8 +2,8 @@
   "manifest_version": 2,
   "name": "Tab Slider",
   "short_name": "Tab Slider",
-  "version": "1.1",
-  "description": "Shifts most recent tabs to the left, enhancing your browsing experience.",
+  "version": "1.2",
+  "description": "Keep your tabs ordered by their most recent usage.",
   "author": "ZitRo",
   "icons": {
     "16": "img/logo-16.png",
