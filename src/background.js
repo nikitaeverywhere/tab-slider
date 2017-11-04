@@ -17,11 +17,30 @@ chrome.tabs.onCreated.addListener(({ id, selected }) => {
 	if (!selected)
 		return;
 
-	chrome.tabs.move(id, {
-		index: 0
-	});
+	moveTabLeft(id);
 
 });
+
+function getPinnedTabsNumber (callback) {
+
+	chrome.tabs.query({
+		currentWindow: true,
+		pinned: true
+	}, ({ length }) => callback(length));
+
+}
+
+function moveTabLeft (id) {
+
+	getPinnedTabsNumber((pinnedTabs) => {
+
+		chrome.tabs.move(id, {
+			index: pinnedTabs
+		});
+
+	});
+
+}
 
 function triggerTabSlide () {
 
@@ -30,14 +49,10 @@ function triggerTabSlide () {
 		currentWindow: true
 	}, ([ tab ]) => {
 
-		if (!tab)
+		if (!tab || tab.index === 0)
 			return;
 
-		if (tab.index !== 0) {
-			chrome.tabs.move(tab.id, {
-				index: 0
-			});
-		}
+		moveTabLeft(tab.id);
 
 	});
 
