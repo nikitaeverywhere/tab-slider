@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Tab Slider",
+  "version": "0.1",
+  "description": "Slides most recent tabs to the left, creating totally different browsing experience",
+  "author": "ZitRo",
+  "icons": {
+    "128": "img/logo-128.png"
+  },
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "tabs"
+  ]
+}
