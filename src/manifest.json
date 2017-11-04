@@ -1,8 +1,9 @@
 {
   "manifest_version": 2,
   "name": "Tab Slider",
-  "version": "1.0",
-  "description": "Slides most recent tabs to the left, creating totally different browsing experience",
+  "short_name": "Tab Slider",
+  "version": "1.1",
+  "description": "Shifts most recent tabs to the left, enhancing your browsing experience.",
   "author": "ZitRo",
   "icons": {
     "16": "img/logo-16.png",
@@ -18,5 +19,6 @@
   "options_page": "options.html",
   "permissions": [
     "tabs"
-  ]
+  ],
+  "offline_enabled": true
 }
