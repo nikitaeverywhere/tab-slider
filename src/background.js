@@ -16,12 +16,16 @@ api.onTabActivated(() => {
 
 });
 
-api.onTabCreated(({ id, active }) => {
+api.onTabCreated((tab) => {
 
-	if (!active)
-		return;
+	api.getActiveTab((activeTab) => { // Opera does not set tab.active immediately onTabCreated
 
-	moveTabLeft(id);
+		if (activeTab.id !== tab.id)
+			return;
+
+		moveTabLeft(tab.id);
+
+	});
 
 });
 
