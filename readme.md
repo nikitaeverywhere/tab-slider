@@ -3,7 +3,8 @@
 <img src="src/img/logo-128.png" width=16 vertical-align=bottom/> An extension which keeps browser tabs sorted in most recently used order, 
 creating totally different browsing experience.
 
-[Download from Chrome Web Store!](https://chrome.google.com/webstore/detail/nobaaibkcalggmjnjhnlmmcldllpogjp)
++ [Install for Chrome](https://chrome.google.com/webstore/detail/nobaaibkcalggmjnjhnlmmcldllpogjp/)
++ [Install for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tab-slider/)
 
 Features
 --------
