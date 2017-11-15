@@ -44,14 +44,15 @@ gulp.task("clean", () => {
 });
 
 gulp.task("move-files", () => gulp.src([
-	`src/options.*`
+	`src/options.html`,
+	`src/options.css`
 ]).pipe(gulp.dest(`${ buildTo }/${ pkg.name }-${ browser }/`)));
 
 gulp.task("move-images", () => gulp.src([
 	`src/img/*.*`
 ]).pipe(gulp.dest(`${ buildTo }/${ pkg.name }-${ browser }/img`)));
 
-gulp.task("move-background-script", () => gulp.src(`src/background.js`)
+gulp.task("move-background-script", () => gulp.src(`src/*.js`)
 .pipe(rollup({
 	plugins: [
 		preprocessPlugin({
@@ -64,7 +65,7 @@ gulp.task("move-background-script", () => gulp.src(`src/background.js`)
 	preferConst: true
 }, {
 	format: `iife`,
-	input: `src/background.js`
+	input: [`background.js`, `options.js`]
 }))
 .pipe(gulp.dest(`${ buildTo }/${ pkg.name }-${ browser }/`)));
 

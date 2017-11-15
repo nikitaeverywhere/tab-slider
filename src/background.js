@@ -1,11 +1,12 @@
+// This comments are preprocessed and in final browser bundle will go an appropriate API.
 /* @exclude */ import * as api from "./apis/chrome.js"; /* @endexclude */
 /* @echo "import * as api from './apis/" *//* @echo browser *//* @echo ".js';" */
 
-const defaultDelay = 1;
+import { defaultDelay } from "./utils/const.js";
 
 let timeout;
 
-chrome.tabs.onActivated.addListener(() => {
+api.onTabActivated(() => {
 
 	clearTimeout(timeout);
 	timeout = setTimeout(
@@ -15,46 +16,19 @@ chrome.tabs.onActivated.addListener(() => {
 
 });
 
-chrome.tabs.onCreated.addListener(({ id, selected }) => {
+api.onTabCreated(({ id, active }) => {
 
-	if (!selected)
+	if (!active)
 		return;
 
 	moveTabLeft(id);
 
 });
 
-function getPinnedTabsNumber (callback) {
-
-	chrome.tabs.query({
-		currentWindow: true,
-		pinned: true
-	}, ({ length }) => callback(length));
-
-}
-
 function moveTabLeft (id) {
-
-	getPinnedTabsNumber((pinnedTabs) => {
-
-		api.move(id, pinnedTabs, () => {});
-
-	});
-
+	api.getPinnedTabsNumber((pinnedTabs) => api.move(id, pinnedTabs));
 }
 
 function triggerTabSlide () {
-
-	chrome.tabs.query({
-		active: true,
-		currentWindow: true
-	}, ([ tab ]) => {
-
-		if (!tab || tab.index === 0)
-			return;
-
-		moveTabLeft(tab.id);
-
-	});
-
+	api.getActiveTab((tab) => tab && tab.index !== 0 && moveTabLeft(tab.id));
 }

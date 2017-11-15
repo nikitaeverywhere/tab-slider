@@ -1,4 +1,4 @@
-const defaultDelay = 1;
+import { defaultDelay } from "./utils/const.js";
 
 window.addEventListener("load", () => {
 
