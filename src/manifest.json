@@ -4,10 +4,11 @@
   "short_name": "Tab Slider",
   "version": "1.2",
   "description": "Keep your tabs ordered by their most recent usage.",
-  "author": "ZitRo",
+  "author": "Nikita Savchenko",
   "icons": {
     "16": "img/logo-16.png",
     "48": "img/logo-48.png",
+    "96": "img/logo-96.png",
     "128": "img/logo-128.png"
   },
   "background": {

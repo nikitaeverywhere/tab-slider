@@ -1,3 +1,6 @@
+/* @exclude */ import * as api from "./apis/chrome.js"; /* @endexclude */
+/* @echo "import * as api from './apis/" *//* @echo browser *//* @echo ".js';" */
+
 const defaultDelay = 1;
 
 let timeout;
@@ -34,9 +37,7 @@ function moveTabLeft (id) {
 
 	getPinnedTabsNumber((pinnedTabs) => {
 
-		chrome.tabs.move(id, {
-			index: pinnedTabs
-		});
+		api.move(id, pinnedTabs, () => {});
 
 	});
 

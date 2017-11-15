@@ -1,0 +1,41 @@
+{
+  "name": "tab-slider",
+  "version": "1.3.0",
+  "description": "An extension which keeps browser tabs sorted in most recently used order",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp --gulpfile gulpfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZitRos/tab-slider.git"
+  },
+  "keywords": [
+    "tab",
+    "slider",
+    "mru",
+    "order",
+    "most",
+    "recent",
+    "used",
+    "tabs"
+  ],
+  "author": {
+    "name": "Nikita Savchenko",
+    "url": "https://nikita.tk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZitRos/tab-slider/issues"
+  },
+  "homepage": "https://github.com/ZitRos/tab-slider#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-4.0.build": "^4.0.0-build.a271520",
+    "gulp-better-rollup": "^2.0.0",
+    "gulp-zip": "^4.0.0",
+    "rollup": "^0.51.5",
+    "rollup-plugin-preprocess": "0.0.4"
+  },
+  "dependencies": {}
+}
