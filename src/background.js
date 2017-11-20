@@ -23,16 +23,16 @@ api.onTabCreated((tab) => {
 		if (activeTab.id !== tab.id)
 			return;
 
-		moveTabLeft(tab.id);
+		moveTabLeft(tab);
 
 	});
 
 });
 
-function moveTabLeft (id) {
-	api.getPinnedTabsNumber((pinnedTabs) => api.move(id, pinnedTabs));
+function moveTabLeft (tab) {
+	api.getPinnedTabsNumber((pinnedTabs) => api.move(tab.id, tab.pinned ? 0 : pinnedTabs));
 }
 
 function triggerTabSlide () {
-	api.getActiveTab((tab) => tab && tab.index !== 0 && moveTabLeft(tab.id));
+	api.getActiveTab((tab) => tab && tab.index !== 0 && moveTabLeft(tab));
 }

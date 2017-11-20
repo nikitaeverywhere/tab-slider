@@ -1,6 +1,6 @@
 {
   "name": "tab-slider",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "An extension which keeps browser tabs sorted in most recently used order",
   "main": "gulpfile.js",
   "scripts": {
