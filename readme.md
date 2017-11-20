@@ -5,6 +5,7 @@ creating totally different browsing experience.
 
 + [Install for Chrome](https://chrome.google.com/webstore/detail/nobaaibkcalggmjnjhnlmmcldllpogjp/)
 + [Install for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tab-slider/)
++ [Install for Opera](https://addons.opera.com/en/extensions/details/tab-slider/)
 
 Features
 --------
