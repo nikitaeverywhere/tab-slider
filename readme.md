@@ -22,21 +22,22 @@ Demo
 Development
 -----------
 
-This extension's codebase is developed to support both Firefox and Chrome browser extension APIs.
+This extension's codebase is developed to support multiple browser extension APIs.
 
-Before going into development, you will need latest NodeJS (tested on v6-8) installed. Then, run:
+Before going into development, you will need latest [NodeJS](https://nodejs.org) (tested on v6-8)
+installed. Then, run:
 
 ```bash
 npm install
 ```
 
-And finally
+After making changes to sources, build the extension:
 
 ```bash
 npm run build
 ```
 
-To bundle versions of extension for different browsers. They will go to `build` folder ready-to-use.
+This will bundle extension for different browsers. They will go to `build` directory ready-to-use.
 
 Note: Microsoft Edge does not support moving tabs in its extension API at the time of extension 
 creation, so sadly no Edge :(
