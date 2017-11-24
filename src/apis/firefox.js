@@ -1,4 +1,4 @@
-export function move (id, index, callback) {
+export function moveTab (id, index, callback) {
 
 	browser.tabs.move(id, {
 		index: index
