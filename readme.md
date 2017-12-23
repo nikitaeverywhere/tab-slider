@@ -13,8 +13,8 @@ How It Works
 + If you stay on tab more than 1 second (default), it will "slide" to the leftmost position;
 + In this way, most recently used tabs always stay left-to-right ordered;
 + Because of the order, naturally, when switching tabs with Ctrl+Tab, the browser will switch to the next most recently used tab;
-+ Pinned tabs will slide to the opposite side, from right to left. This behaviour is intended, enabling you to conveniently switch between most recently used pinned tabs and most recently used normal tabs with keyboard shortcuts (Ctrl+Shift+Tab switches to most recently used pinned tab, and Ctrl+Tab switches back to most recently used normal tab).
-+ You can customize reordering delay in extension's settings;
++ Pinned tabs will slide to the opposite side, from left to right. This behaviour is intended, enabling you to conveniently switch between most recently used pinned tabs and most recently used normal tabs with keyboard shortcuts (Ctrl+Shift+Tab switches to most recently used pinned tab, and Ctrl+Tab switches back to most recently used normal tab).
++ You can customize reordering delay and pinned tabs sliding in extension's settings;
 + New active tabs appear left immediately.
 
 *Once you understand this concept, you will find such reordering of tabs absolutely natural and 
