@@ -1,0 +1,6 @@
+.idea/
+build/tab-slider-chrome/
+build/tab-slider-firefox/
+node_modules/
+package-lock.json
+*.iml
