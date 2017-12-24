@@ -1,15 +1,18 @@
-import { defaultDelay } from "./utils/const.js";
+import { getDelay, setDelay, getMovePinnedTabs, setMovePinnedTabs } from "./utils/index.js";
 
 window.addEventListener("load", () => {
 
 	const delayElement = document.getElementById("delay");
+	const movePinnedTabsElement = document.getElementById("movePinnedTabs");
 
-	delayElement.value = localStorage.hasOwnProperty("delay")
-		? localStorage["delay"]
-		: defaultDelay;
+	delayElement.value = getDelay();
+	movePinnedTabsElement.checked = getMovePinnedTabs();
 
 	delayElement.addEventListener("change", ({ target }) => {
-		target.value = localStorage["delay"] = target.value > 0.1 ? target.value : 0.1;
+		target.value = setDelay(target.value);
+	});
+	movePinnedTabsElement.addEventListener("change", ({ target }) => {
+		target.checked = setMovePinnedTabs(target.checked);
 	});
 
 });
