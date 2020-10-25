@@ -5,6 +5,7 @@
 import { getDelay, getMovePinnedTabs, getMaxTabs } from "./utils/index.js";
 
 let timeout;
+const byIndexAsc = (a, b) => a.index - b.index;
 
 api.onTabActivated(() => {
 
@@ -26,20 +27,41 @@ api.onTabCreated((tab) => {
 
 });
 
+function removeOverflownTabs () {
+	api.getAllTabs((tabs) => {
+		const maxTabs = getMaxTabs();
+		if (tabs.length > maxTabs) {
+			const lastTabs = tabs.sort(byIndexAsc).slice(maxTabs);
+			if (lastTabs.length) {
+				api.removeTab(lastTabs.map(tab => tab.id));
+			}
+		}
+	});
+}
+
 function moveTab (tab) {
-	api.getPinnedTabsNumber((pinnedTabs) => {
+	api.getAllTabs((tabs) => {
 		if (tab.pinned && !getMovePinnedTabs())
 			return;
-		api.moveTab(tab.id, tab.pinned ? pinnedTabs - 1 : pinnedTabs);
-		api.getAllTabs((tabs) => {
-			const maxTabs = getMaxTabs();
-			if (tabs.length > maxTabs) {
-				const lastTabs = tabs.sort((a, b) => a.index-b.index).slice(maxTabs);
-				if (lastTabs.length) {
-					api.removeTab(lastTabs.map(tab => tab.id));
-				}
-			}
-		});
+
+		const pinnedTabs = tabs.filter(tab => tab.pinned);
+		if (tab.groupId > 0 && !tab.pinned) {
+			// Since Chrome 88; Pinned tabs cannot be in the group.
+			// However, the condition above additionally restricts it.
+			const groupId = tab.groupId;
+			const allTabsInGroup = [tab].concat(
+				tabs.filter(t => t.groupId === tab.groupId && t.id !== tab.id)
+					.sort(byIndexAsc)
+			);
+			const tabIds = allTabsInGroup.map(tab => tab.id);
+			api.moveTab(tabIds, pinnedTabs.length, () => {
+				// Because the group falls apart, it has to be grouped again.
+				api.groupTabs(tabIds, groupId);
+				removeOverflownTabs();
+			});
+		} else {
+			api.moveTab(tab.id, tab.pinned ? pinnedTabs.length - 1 : pinnedTabs.length, removeOverflownTabs);
+		}
 	});
 }
 
