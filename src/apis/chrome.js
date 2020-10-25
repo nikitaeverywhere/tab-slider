@@ -14,6 +14,10 @@ export function onTabCreated (callback) {
 	chrome.tabs.onCreated.addListener((tab) => callback(tab));
 }
 
+export function groupTabs (tabIds, groupId, callback) {
+	chrome.tabs.group({ tabIds, groupId }, callback);
+}
+
 export function removeTab (ids, callback) {
 	chrome.tabs.remove(ids, callback);
 }

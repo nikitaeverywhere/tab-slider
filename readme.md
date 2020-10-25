@@ -25,6 +25,8 @@ Demo
 
 ![Demo](etc/demo.gif "Demo")
 
+![Tab groups demo](https://user-images.githubusercontent.com/4989256/97109943-ec6c3f80-16de-11eb-8565-0257eaf1b233.gif)
+
 ![Tab Slider settings](https://user-images.githubusercontent.com/4989256/97105776-414f8c00-16c6-11eb-8a85-441c6d575183.png)
 
 Development
