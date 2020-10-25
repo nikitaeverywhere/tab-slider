@@ -14,6 +14,16 @@ export function onTabCreated (callback) {
 	browser.tabs.onCreated.addListener((tab) => callback(tab));
 }
 
+export function removeTab (ids, callback) {
+	browser.tabs.remove(ids, callback);
+}
+
+export function getAllTabs (callback) {
+	browser.tabs.query({
+		currentWindow: true
+	}, (tabs) => callback(tabs));
+}
+
 export function getPinnedTabsNumber (callback) {
 
 	browser.tabs.query({

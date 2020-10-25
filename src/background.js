@@ -2,7 +2,7 @@
 /* @exclude */ import * as api from "./apis/chrome.js"; /* @endexclude */
 /* @echo "import * as api from './apis/" *//* @echo browser *//* @echo ".js';" */
 
-import { getDelay, getMovePinnedTabs } from "./utils/index.js";
+import { getDelay, getMovePinnedTabs, getMaxTabs } from "./utils/index.js";
 
 let timeout;
 
@@ -31,6 +31,15 @@ function moveTab (tab) {
 		if (tab.pinned && !getMovePinnedTabs())
 			return;
 		api.moveTab(tab.id, tab.pinned ? pinnedTabs - 1 : pinnedTabs);
+		api.getAllTabs((tabs) => {
+			const maxTabs = getMaxTabs();
+			if (tabs.length > maxTabs) {
+				const lastTabs = tabs.sort((a, b) => a.index-b.index).slice(maxTabs);
+				if (lastTabs.length) {
+					api.removeTab(lastTabs.map(tab => tab.id));
+				}
+			}
+		});
 	});
 }
 

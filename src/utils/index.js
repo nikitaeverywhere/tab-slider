@@ -1,4 +1,4 @@
-import { defaultDelay, movePinnedTabs } from "./const";
+import { defaultDelay, movePinnedTabs, maxTabs } from "./const";
 
 export function getDelay () {
 	return localStorage.hasOwnProperty("delay")
@@ -16,4 +16,13 @@ export function getMovePinnedTabs () {
 }
 export function setMovePinnedTabs (boolean) {
 	return localStorage["movePinnedTabs"] = !!boolean;
+}
+
+export function getMaxTabs () {
+	return localStorage.hasOwnProperty("maxTabs")
+		? parseInt(localStorage["maxTabs"])
+		: maxTabs;
+}
+export function setMaxTabs (number) {
+	return localStorage["maxTabs"] = Math.max(2, +number);
 }
