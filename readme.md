@@ -7,6 +7,14 @@ tabs sorted in most recently used order, creating totally different browsing exp
 - [Install for Firefox](https://addons.mozilla.org/firefox/addon/tab-slider/) (v2 manifest, see `master` branch)
 - [Install for Opera](https://addons.opera.com/en/extensions/details/tab-slider/) (v2 manifest, see `master` branch)
 
+## Demos
+
+![Demo](etc/demo.gif "Demo")
+
+![Tab groups demo](https://user-images.githubusercontent.com/4989256/97109943-ec6c3f80-16de-11eb-8565-0257eaf1b233.gif)
+
+![Tab Slider settings](https://user-images.githubusercontent.com/4989256/97105776-414f8c00-16c6-11eb-8a85-441c6d575183.png)
+
 ## How It Works
 
 - If you stay on tab more than 1 second (default), it will "slide" to the leftmost position;
@@ -18,14 +26,6 @@ tabs sorted in most recently used order, creating totally different browsing exp
 
 _Once you understand this concept, you will find such reordering of tabs absolutely natural and
 logical._ See [this short video](https://youtu.be/X_P4QmVbLdE) for demonstration.
-
-## Demo
-
-![Demo](etc/demo.gif "Demo")
-
-![Tab groups demo](https://user-images.githubusercontent.com/4989256/97109943-ec6c3f80-16de-11eb-8565-0257eaf1b233.gif)
-
-![Tab Slider settings](https://user-images.githubusercontent.com/4989256/97105776-414f8c00-16c6-11eb-8a85-441c6d575183.png)
 
 ## Development
 
