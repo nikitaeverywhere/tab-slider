@@ -1,63 +1,66 @@
-html, body {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	background: transparent;
-	font-size: 14pt;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, serif;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-size: 14pt;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, serif;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .logo {
-	height: 32px;
+  height: 32px;
 }
 
 .container {
-	border-radius: 6px;
-    box-shadow: 0 1px 4px grey;
-    padding: 18px;
-    margin: 6px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px grey;
+  padding: 18px;
+  margin: 6px;
 }
 
-input[type=number] {
-	border: 1px solid gray;
-    padding: 6px;
-    border-radius: 6px;
-	width: 50px;
-	min-height: 11pt;
+input[type="number"] {
+  border: 1px solid gray;
+  padding: 6px;
+  border-radius: 6px;
+  width: 50px;
+  min-height: 11pt;
 }
 
-table, th, td {
-	border: 0;
+table,
+th,
+td {
+  border: 0;
 }
 
 h1 {
-	vertical-align: middle;
-	margin-top: 0;
+  vertical-align: middle;
+  margin-top: 0;
 }
 
 h1 > * {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 td {
-	text-align: center;
-	padding: 6px;
-	vertical-align: middle;
+  text-align: center;
+  padding: 6px;
+  vertical-align: middle;
 }
 
 td:last-child {
-	text-align: left;
+  text-align: left;
 }
 
 .learn-more {
-	font-size: 11pt;
+  font-size: 11pt;
 }

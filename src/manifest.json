@@ -1,8 +1,8 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Tab Slider",
   "short_name": "Tab Slider",
-  "version": "1.2",
+  "version": "2.0",
   "description": "Keep your tabs ordered by their most recent usage.",
   "author": "Nikita Savchenko",
   "icons": {
@@ -12,14 +12,10 @@
     "128": "img/logo-128.png"
   },
   "background": {
-    "persistent": true,
-    "scripts": [
-      "background.js"
-    ]
+    "service_worker": "background.js",
+    "type": "module"
   },
   "options_page": "options.html",
-  "permissions": [
-    "tabs"
-  ],
+  "permissions": ["tabs"],
   "offline_enabled": true
 }
