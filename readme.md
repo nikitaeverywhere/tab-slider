@@ -54,5 +54,3 @@ creation, so sadly no Edge :(
 ## License
 
 [MIT](license) © [Nikita Savchenko](https://nikitaeverywhere.com)
-
-Inspired by [this extension](https://chrome.google.com/webstore/detail/tab-stack/gfpdghcockbpiokcaaagmnneioeopnnb).
