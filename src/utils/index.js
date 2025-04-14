@@ -1,28 +1,37 @@
-import { defaultDelay, maxTabs, movePinnedTabs } from "./const";
+// This comments are preprocessed and in final browser bundle will appear an appropriate API.
+/* @exclude */ import * as api from "../apis/chrome.js"; /* @endexclude */
+/* @echo "import * as api from '../apis/" */ /* @echo browser */ /* @echo ".js';" */
 
-export function getDelay() {
-  return localStorage.hasOwnProperty("delay")
-    ? parseFloat(localStorage["delay"])
-    : defaultDelay;
-}
-export function setDelay(number) {
-  return (localStorage["delay"] = number > 0.1 ? number : 0.1);
-}
+export const DEFAULT_DELAY = 1;
+export const DEFAULT_MOVE_PINNED_TABS = true;
+export const DEFAULT_MAX_TABS = 25;
 
-export function getMovePinnedTabs() {
-  return localStorage.hasOwnProperty("movePinnedTabs")
-    ? localStorage["movePinnedTabs"] === "true"
-    : movePinnedTabs;
+export async function getDelay() {
+  return (await api.hasStorageKey("delay"))
+    ? parseFloat(await api.getStorage("delay"))
+    : DEFAULT_DELAY;
 }
-export function setMovePinnedTabs(boolean) {
-  return (localStorage["movePinnedTabs"] = !!boolean);
+export async function setDelay(number) {
+  await api.setStorage("delay", number > 0.1 ? number : 0.1);
+  return number;
 }
 
-export function getMaxTabs() {
-  return localStorage.hasOwnProperty("maxTabs")``
-    ? parseInt(localStorage["maxTabs"])
-    : maxTabs;
+export async function getMovePinnedTabs() {
+  return (await api.hasStorageKey("movePinnedTabs"))
+    ? (await api.getStorage("movePinnedTabs")) === "true"
+    : DEFAULT_MOVE_PINNED_TABS;
 }
-export function setMaxTabs(number) {
-  return (localStorage["maxTabs"] = Math.max(2, +number));
+export async function setMovePinnedTabs(boolean) {
+  await api.setStorage("movePinnedTabs", !!boolean);
+  return !!boolean;
+}
+
+export async function getMaxTabs() {
+  return (await api.hasStorageKey("maxTabs"))
+    ? parseInt(await api.getStorage("maxTabs"))
+    : DEFAULT_MAX_TABS;
+}
+export async function setMaxTabs(number) {
+  await api.setStorage("maxTabs", Math.max(2, +number));
+  return number;
 }

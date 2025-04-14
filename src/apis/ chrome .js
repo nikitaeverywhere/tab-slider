@@ -52,3 +52,29 @@ export function getActiveTab(callback) {
     ([tab]) => callback(tab || null)
   );
 }
+
+/**
+ * @param {string} key
+ * @param {string} value
+ * @returns {Promise}
+ */
+export async function setStorage(key, value) {
+  return chrome.storage.local.set({ [key]: value });
+}
+
+/**
+ * @param {string} key
+ * @returns {Promise<string | undefined>}
+ */
+export async function getStorage(key) {
+  return ((await chrome.storage.local.get([key])) || {})[key];
+}
+
+/**
+ * @param {string} key
+ * @returns {Promise<boolean>}
+ */
+export async function hasStorageKey(key) {
+  const result = await chrome.storage.local.get([key]);
+  return Object.prototype.hasOwnProperty.call(result, key);
+}
