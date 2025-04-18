@@ -16,6 +16,6 @@
     "type": "module"
   },
   "options_page": "options.html",
-  "permissions": ["tabs", "storage"],
+  "permissions": ["storage"],
   "offline_enabled": true
 }

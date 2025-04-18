@@ -62,5 +62,6 @@ td:last-child {
 }
 
 .learn-more {
+  margin-top: 20px;
   font-size: 11pt;
 }
